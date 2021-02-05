@@ -1,7 +1,7 @@
 html{
     margin: 0;
     padding: 0;
-    
+    font-size: 75%;
 
 }
 
@@ -9,7 +9,7 @@ body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-       
+    background-image: linear-gradient(#272F44 60%, #fff 40%);
     
 }
 
@@ -33,17 +33,12 @@ a:hover{
     color: rgba(13, 0, 255, 1);
 }
 
-.containerMain{
+.container-main{
     margin: 0;
     padding: 0;
-    width: 100%;
-    width: 100%;
+    max-width: 65%;
+    margin: 30px auto;
     box-sizing: border-box;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-right: 12.25%;
-    padding-left: 12.25%;
-    background-image: linear-gradient(#272F44 60%, #fff 40%);
     overflow: hidden;
     color: #FFFFFF;
 }
@@ -51,18 +46,25 @@ a:hover{
 
 .header{
     margin-bottom: 130px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
 }
 
 .headerHeadingContainer{
-    float: left;
-    margin-right: 25%;
-    margin-top: 15px;
+    display: flex;
+    flex: 3;
+    justify-content: space-between;
+    align-content: center;
+    margin-right: 50px;
     
 }
 
 .headerBodyContainer{
-    margin: 16px 0;
-    float: left;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -70,11 +72,13 @@ a:hover{
     display: inline-block;
     font-family: 'Pacifico', cursive;
     font-weight: lighter;
-    font-size: 1em;   
+    font-size: 1.6rem;   
+   
 }
 
 
 .siteHeaderLink{
+    margin-right: auto;
     transition: color 0.3s ease-in-out;
 }
 
@@ -92,10 +96,9 @@ a:hover{
 }
 
 .site-nav{
-    margin-top: 15px;
-    margin-right: 2px;
-    float: left;
-    
+    display: flex;
+    align-items: center;
+        
 }
 
 .menuShowHide{
@@ -107,6 +110,7 @@ a:hover{
     padding-right: 0;
     padding-left: 0;
     margin: 0;
+    overflow: hidden;
     
 }
 
@@ -118,7 +122,8 @@ a:hover{
 
 .site-nav ul li a{
     display: inline-block;
-    font-size: 0.55em;
+    font-size: 0.8rem;
+    font-weight: 500;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.15);
     padding: 5px;
     transition: color .3s ease-in-out;
@@ -128,7 +133,8 @@ a:hover{
 .site-nav a:active,
 .site-nav a:focus,
 .site-nav a:hover{
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(256, 256, 256, 1);
+    color: blue;
 }
 
 @media screen and (max-width:940px){
@@ -138,77 +144,74 @@ a:hover{
         top: 15px;
     }
      
-     .site-navList{
-         position: relative;
-         display: none;
+    .site-nav-list{
+        position: relative;
+        transform: translate(-999px, -0px) !important;
+        transition: 0.3s ease-in-out;
+        ;
      }
      
-     .menuShowHide + label:before, 
-     .menuShowHide + label:after{
-         content: "";
-         display: block;
-         width: 1em;
-         height: 0.2em;
-         border: solid #fff;
-         border-width: 0.2em 0;
-     }
-     .menuShowHide + label:after{    
-         border-top: 0;
-     }
-     
-     .menuShowHide:checked ~ .site-navList{
-         display: block;
-     }
+    .menuShowHide + label:before, 
+    .menuShowHide + label:after{
+        content: "";
+        display: block;
+        width: 1em;
+        height: 0.2em;
+        border: solid #fff;
+        border-width: 0.2em 0;
+    }
+.menuShowHide + label:after{    
+        border-top: 0;
+    }
     
-     .site-nav ul li{
-         display: block;
-     }
+    .menuShowHide:checked ~ .site-nav-list{
+    transform: translate(-0px, -0px) !important;
+    }
 
- }
- 
+    .site-nav ul li{
+        display: block;
+    }
 
-.cartNotification{
+}
+
+
+.cart-SVG-link{
     display: inline-block;
-    margin-top: 15px;
-    padding: 0;
     position: relative;
-    padding-right: 10px;
-    transition: transform 0.3s ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.cartSVGLink{
-    display: inline-block;
-    position: absolute;
-    right: 25%;
-    top: 15px;
-}
-
-.cartSVG{
-    fill: #FFFFFF !important;
+.cart-SVG{
+    width: 2rem;
+    height: auto;
+    fill: #FFFFFF;
     
 }
 
-.cartSVGLink:hover .cartNotification{
-    transform: scale(1.1);
-    color: #fff;
-}
-
-.notificationCount{
+.notification-count{
     padding: 0px 5px;
-    font-size: 0.7em;
+    font-size: 0.8em;
+    font-weight: bold;
     background-color: #68CACB;
     border: 1px solid #FFFFFF;
     border-radius: 50%;
     position: absolute;
-    top: -10px;
-    right: 7px;
+    right: -5%;
+    top: -10%;
 }
+
+.cart-SVG-link:hover .cart-SVG {
+    fill: blue;
+}
+
+
 
 .btn{
     display: inline-block;
     background-color: #DF7694;
-    padding: 10px;
-    border: 1px solid rgba(223, 118, 148, 0.5);
+    padding: 5px;
+    /* border: 1px solid rgba(223, 118, 148, 0.5); */
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.15);
     box-shadow: 1px 1px 1px rgba(223, 118, 148, 0.1);
     font-size: 0.8em;
@@ -221,19 +224,28 @@ a:hover{
     color: #fff;
 }
 
-.btn1{
-    position: absolute;
-    right: 12.25%;
-    top: 15px;
+.account-button{
+    margin-left: auto;
+    font-size: 0.8em;
+    display: flex;
+    align-content: center;
 }
 
-.userSVG{
-    margin-top: px;
+/* .account-button:hover .notification-count{
+    font-size: 5em;
+    color: blue;
+    fill: blue;
+} */
+
+
+.user-SVG{
     fill: #FFFFFF;
     stroke: #FFFFFF;
-    stroke-width: 20px;
-    transform: translateY(3.5px);
-   }
+    width: 1rem;
+    height: auto;
+    stroke-width: 2rem;
+    padding: 0 4px;
+}
 
 @media screen and (max-width: 940px){
     .accountLabel{
